@@ -1,0 +1,41 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        Scanner scan = new Scanner(System.in);
+        
+        
+        System.out.print("Enter a value for N: ");
+        int N = Integer.parseInt(scan.nextLine());
+        
+        //Constraints: 2<=N<=20
+        while(2>N || 20<N) {
+        	System.out.print("Constraints: 2<=N<=20; try again ");
+            N = Integer.parseInt(scan.nextLine());
+        }
+        
+        //Multiply N by 1 to 10
+        for(int i=1; i<=10; i++) {
+        	
+        	int result = N * i;
+        	System.out.printf("%d x %d = %d %n", N, i, result);
+        }
+
+        scan.close();
+        bufferedReader.close();
+    }
+}
